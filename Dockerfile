@@ -6,7 +6,7 @@ MAINTAINER Xueshan Feng <sfeng@stanford.edu>
 ENV TERRAFORM_VERSION 0.6.9
 
 # Add git so we can commit status back to git repo.
-RUN apk --update add git  && \
+RUN apk --update add git openssh && \
     curl -o /terraform.zip -L https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /terraform.zip -d /usr/bin && \
     rm /terraform.zip
